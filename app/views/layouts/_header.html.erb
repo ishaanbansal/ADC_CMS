@@ -1,0 +1,56 @@
+
+<!-- Subject navigation -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ADC</a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% @subjects ||= [] %>
+        <% @subjects.each do |subject| 
+          if subject.id == params[:id].to_i %>
+          <li class="active">
+          <% else %>
+          <li>
+          <% end 
+          if subject.pages.count > 0
+          %>
+
+            <%= link_to(subject.name, {:action => 'show',:id => subject.id, :permalink => subject.pages.first.permalink}) %>
+          <% else %>
+             <%= link_to(subject.name, {:action => 'show',:id => subject.id}) %>
+        <% end %>
+        </li>
+         <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- page navigation -->
+
+<nav id="page_nav">
+<% if params[:id].present? %>
+<ul class="nav nav-tabs" role="tablist">
+    <% Subject.find(params[:id] || (Subject.all.sorted.first.id)).pages.visible.sorted.each do |page| 
+      if page.permalink == params[:permalink] %>
+      <li class="active">
+      <% else %>
+      <li>
+      <% end %>
+        <%= link_to(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
+    <% end %>
+</ul>
+<% end %>
+</nav>

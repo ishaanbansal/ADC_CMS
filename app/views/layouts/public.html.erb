@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ADC<%= " | #{@page_title}" if @page_title %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <style type="text/css">
+      #page_nav{
+        margin: 0 8% 0 6%;
+      }
+      #main{
+        margin: 0 9% 0 7%;
+      }
+      .navbar{
+        font-weight: bold;
+        border-radius: 0;
+      }
+      #footer{
+        color: white;
+        padding-left: 8%;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="header">
+      <%= render 'layouts/header' %>
+    </div>
+
+    <div id="main">
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div class="navbar-inverse navbar-fixed-bottom" id="footer">
+      <%= render 'layouts/footer' %>
+    </div>
+
+  </body>
+</html>
