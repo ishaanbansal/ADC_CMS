@@ -8,6 +8,12 @@ class PublicController < ApplicationController
     # intro text
   end
 
+  def search
+    # search text
+    @query=params[:query]
+    @search_results=Section.visible.where("name LIKE '%#{@query}%' OR content LIKE '%#{@query}%'").sorted
+  end
+
   def show
     @page = Page.where(:permalink => params[:permalink], :visible => true).first
     if @page.nil?
@@ -15,6 +21,9 @@ class PublicController < ApplicationController
     else
       # display the page content using show.html.erb
     end
+  end
+
+  def contact
   end
 
   private

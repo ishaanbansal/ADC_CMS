@@ -1,0 +1,24 @@
+<h2>Search Page</h2>
+
+<h3>Search results for ' <em><%= @query %></em> '</h3>
+
+<% if @search_results.count == 1 %>
+<h4>There was <%= @search_results.count %> result</h4>
+<% else %>
+<h4>There were <%= @search_results.count %> results</h4>
+<% end %>
+<hr></hr>
+
+<% @search_results.each do |section| %>
+  <div class="section ">
+  	<h4 id=<%= "section#{section.id}" %>><%= highlight(Page.find(section.page_id).name, @query) %></h4>
+  	<h5 id=<%= "section#{section.id}" %>><strong><%= highlight(section.name, @query) %></strong></h5>
+    <% case section.content_type %>
+    <% when 'HTML' %>
+      <p><%= highlight(raw(sanitize(section.content, :tags => ['strong', 'em', 'a','p','br'])),@query) %></p>
+    <% when 'text' %>
+      <p><%= highlight(section.content, @query) %></p>
+    <% end %>
+  </div>
+  <hr></hr>
+<% end %>

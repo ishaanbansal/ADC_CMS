@@ -10,16 +10,34 @@
         margin: 0 8% 0 6%;
       }
       #main{
-        margin: 0 9% 0 7%;
+        margin: 0 3% 1% 6%;
+        border-left: 1px solid #E7E7E7;
+      }
+      #content{
+        padding: 30px;
+        text-align: justify;
+      }
+      #side_navigation{
+        margin-top: 10px;
+        padding-left: 3%;
+      }
+      #side_navigation li{
+        border-left: solid 1.5px #E7E7E7;
+        list-style-type: none;
+      }
+      #side_navigation li :hover{
+        border-left: solid 2px #5C88AE;
+        background-color: transparent;
+      }
+      #footer{
+        color: white;
+        padding:2px 0 0 8%;
       }
       .navbar{
         font-weight: bold;
         border-radius: 0;
       }
-      #footer{
-        color: white;
-        padding-left: 8%;
-      }
+
     </style>
   </head>
   <body>
@@ -27,17 +45,33 @@
     <div id="header">
       <%= render 'layouts/header' %>
     </div>
+    <div id="main" class="container">
+      <div class="row">
 
-    <div id="main">
-      <div id="content">
-        <%= yield %>
+        <div id="content" class="col-md-9">
+          <%= yield %>
+        </div>
+        
+        <div id="side_navigation" class="col-md-3 hidden-xs hidden-sm">
+          <%= render 'layouts/side_nav' %>
+        </div>
+
       </div>
-      <div class="clear"></div>
     </div>
-
-    <div class="navbar-inverse navbar-fixed-bottom" id="footer">
+    <div id="footer" class="navbar-inverse navbar-fixed-bottom">
       <%= render 'layouts/footer' %>
     </div>
 
   </body>
+
+  <script type="text/javascript">
+    $('#side_nav').affix({
+    offset: {
+      top: 60,
+     bottom: function () {
+        return (this.bottom = $('.footer').outerHeight(true))
+      }
+    }
+  })
+  </script>
 </html>
