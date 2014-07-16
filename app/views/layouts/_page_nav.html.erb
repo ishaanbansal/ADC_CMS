@@ -1,0 +1,19 @@
+
+<!-- Subject navigation -->
+<!-- page navigation -->
+
+<nav id="page_nav">
+
+<% if params[:id].present? %>
+<ul class="nav nav-tabs" role="tablist">
+    <% Subject.find(params[:id] || (Subject.all.sorted.first.id)).pages.visible.sorted.each do |page| 
+      if page.permalink == params[:permalink] %>
+      <li class="active">
+      <% else %>
+      <li>
+      <% end %>
+        <%= link_to(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
+    <% end %>
+</ul>
+<% end %>
+</nav>

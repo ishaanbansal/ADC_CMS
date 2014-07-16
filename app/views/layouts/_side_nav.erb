@@ -1,5 +1,5 @@
 <% if params[:id].present? %>
-<ul id="side_nav" data-spy="affix" class="nav bs-docs-sidenav">
+<ul id="side_nav" class="nav bs-docs-sidenav">
   <% @page.sections.visible.sorted.each do |section| %>
     <li><a href=<%= "#section#{section.id}" %>><%= section.name %></a></li>
   <% end %>

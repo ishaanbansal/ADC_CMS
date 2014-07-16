@@ -1,5 +1,9 @@
 <% @page_title = @page.name %>
-
+<% if @page.image.url != "/images/original/missing.png" %>
+<div class="page_image">
+  <%= image_tag @page.image.url, :width => '103%', 'max-height' => '20px' %>
+</div> 
+<% end %>
 <h2><%= @page.name %></h2></br>
 
 <% @page.sections.visible.sorted.each do |section| %>

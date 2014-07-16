@@ -14,3 +14,38 @@
  *= require admin
  *= require_tree .
  */
+
+  #page_navigation{
+    margin: 0 8% 0 6%;
+  }
+  #main{
+    margin: 0 3% 1% 6%;
+    border-left: 1px solid #E7E7E7;
+  }
+  #content{
+    padding: 30px;
+    text-align: justify;
+  }
+  #side_navigation{
+    margin-top: 10px;
+    padding-left: 3%;
+  }
+  #side_navigation li{
+    border-left: solid 1.5px #E7E7E7;
+    list-style-type: none;
+  }
+  #side_navigation li :hover{
+    border-left: solid 2px #5C88AE;
+    background-color: transparent;
+  }
+  #footer{
+    color: white;
+    padding:2px 0 0 8%;
+  }
+  .navbar{
+    font-weight: bold;
+    border-radius: 0;
+  }
+  .page_image{
+    margin: -2% 0 0 -3%;
+  }

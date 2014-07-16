@@ -43,27 +43,10 @@
         <div class="form-group">
          <%= text_field_tag :query, nil, :class => 'form-control', :placeholder => 'search' %>
         </div>
-        <%= button_tag("search", :class => "btn btn-default") %>
+        <%= button_tag("",:class => "glyphicon glyphicon-search btn btn-info") %>
       <%end%>
     <!-- search bar ends -->
       
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
-
-<!-- page navigation -->
-
-<nav id="page_nav">
-<% if params[:id].present? %>
-<ul class="nav nav-tabs" role="tablist">
-    <% Subject.find(params[:id] || (Subject.all.sorted.first.id)).pages.visible.sorted.each do |page| 
-      if page.permalink == params[:permalink] %>
-      <li class="active">
-      <% else %>
-      <li>
-      <% end %>
-        <%= link_to(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
-    <% end %>
-</ul>
-<% end %>
 </nav>

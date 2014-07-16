@@ -14,6 +14,11 @@
     <td><%= f.text_field(:permalink) %></td>
   </tr>
   <tr>
+    <th><%= f.label(:image) %></th>
+    <td><%= f.file_field :image %></td>
+  </tr>
+  
+  <tr>
     <th><%= f.label(:position) %></th>
     <td><%= f.select(:position, 1..@page_count) %></td>
   </tr>

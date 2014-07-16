@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711185740) do
+ActiveRecord::Schema.define(version: 20140716113106) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name",      limit: 25
@@ -30,9 +30,13 @@ ActiveRecord::Schema.define(version: 20140711185740) do
     t.string   "name"
     t.string   "permalink"
     t.integer  "position"
-    t.boolean  "visible",    default: false
+    t.boolean  "visible",            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "pages", ["permalink"], name: "index_pages_on_permalink"

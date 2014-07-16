@@ -39,7 +39,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem "acts_as_list", "~> 0.3.0"
-
+gem 'paperclip',github:'thoughtbot/paperclip'
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'	
