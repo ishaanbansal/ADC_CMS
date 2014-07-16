@@ -18,28 +18,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           <li><%= link_to("Products",{:controller => 'public', :action => 'products'}) %></li>
-        <% if session[:login_id]
-           @subjects ||= [] %>
-          <% @subjects.each do |subject| 
-            if subject.id == params[:id].to_i %>
-            <li class="active">
-            <% else %>
-            <li>
-            <% end 
-            if subject.pages.count > 0
-            %>
-              <%= link_to(subject.name, {:action => 'show',:id => subject.id, :permalink => subject.pages.first.permalink}) %>
-            <% else %>
-               <%= link_to(subject.name, {:action => 'show',:id => subject.id}) %>
-          <% end %>
-          </li>
-           <% end %>
-        <% end %>
+       
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to("Contact Us",{:controller => 'public', :action => 'contact'}) %></li>
-        
         <li class="btn-group">
           <% if session[:login_id] %>
           <a type="button" class="dropdown-toggle" data-toggle="dropdown">

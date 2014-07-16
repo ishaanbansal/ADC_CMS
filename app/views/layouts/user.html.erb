@@ -9,10 +9,7 @@
   <body data-spy="scroll" data-target="#side-navigation">
     
     <div id="header">
-      <%= render 'layouts/header' %>
-    </div>
-    <div id="page_navigation">
-      <%= render 'layouts/page_nav' %>
+      <%= render 'layouts/header_user' %>
     </div>
     <% if !flash[:notice].blank? %>
       <div class="notice">
@@ -25,11 +22,6 @@
         <div id="content" class="col-md-9">
           <%= yield %>
         </div>
-        
-        <div id="side_navigation" class="col-md-3 hidden-xs hidden-sm">
-          <%= render 'layouts/side_nav' %>
-        </div>
-
       </div>
     </div>
     <div id="footer" class="navbar-inverse navbar-fixed-bottom">

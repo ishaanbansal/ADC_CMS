@@ -1,7 +1,8 @@
 class PublicController < ApplicationController
 
   layout 'public'
-
+  before_action :confirm_user_logged_in, :except => [:login, :attempt_login, :index, :contact, :products]
+  
   before_action :setup_navigation
 
   def index
@@ -24,6 +25,9 @@ class PublicController < ApplicationController
   end
 
   def contact
+  end
+
+  def products
   end
 
   private

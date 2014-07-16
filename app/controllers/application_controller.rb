@@ -14,4 +14,15 @@ class ApplicationController < ActionController::Base
       return true
     end
   end
+
+  def confirm_user_logged_in
+    unless session[:login_id]
+      flash[:notice]="Please log in."
+      redirect_to(:controller => 'user', :action => 'login')
+      return false 
+    else
+      return true
+    end
+  end
+
 end

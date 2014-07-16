@@ -12,6 +12,10 @@ class AccessController < ApplicationController
     # login form
   end
 
+  def users
+    @users=User.sorted
+  end
+
   def attempt_login
     if params[:username].present? && params[:password].present?
       found_user = AdminUser.where(:username => params[:username]).first
