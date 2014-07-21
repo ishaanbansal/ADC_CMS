@@ -12,8 +12,11 @@
     <% subject.pages.visible.sorted.each do |page| %>
       
       <li>
-    
-        <%= link_to(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
+        <%= link_to(page.name, {:action => 'show', :permalink => page.permalink}) %>&nbsp
+        <% if page.sections.where("name LIKE 'Summary'").count>0 %>
+        <%=  page.sections.where("name LIKE 'Summary'").first.content %>
+        <% end %>
+      </li>
     <% end %>
 </ul>
   <% else %>
