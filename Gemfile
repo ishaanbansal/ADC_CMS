@@ -40,6 +40,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem "acts_as_list", "~> 0.3.0"
 gem 'paperclip',github:'thoughtbot/paperclip'
+gem "paperclip-dropbox", ">= 1.1.7"
+gem "figaro"
+
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'	
