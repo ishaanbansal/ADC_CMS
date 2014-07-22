@@ -11,8 +11,14 @@ class PublicController < ApplicationController
 
   def search
     # search text
-    @query=params[:query]
-    @search_results=Section.visible.where("name LIKE '%#{@query}%' OR content LIKE '%#{@query}%'").sorted
+    query_final=" "
+    @query=params[:query].tr('^A-Za-z0-9', ' ')
+    @query_arr=@query.split 
+    @query_arr.each { |x| 
+      query_final+="name LIKE '%#{x}%' OR content LIKE '%#{x}%' OR "
+    }
+    query_final+="name LIKE '"+@query+"' OR content LIKE '"+@query+"'"
+    @search_results=Section.visible.where(query_final).sorted
   end
 
   def show
