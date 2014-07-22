@@ -1,6 +1,6 @@
 <%= error_messages_for(@section) %>
 
-<table summary="Section form fields">
+<table class="table table-hover" summary="Section form fields">
   <tr>
     <th><%= f.label(:page_id, "Page") %></th>
     <td><%= f.select(:page_id, @pages.collect {|p| [p.name, p.id]}) %>
@@ -8,7 +8,7 @@
   </tr>
   <tr>
     <th><%= f.label(:name) %></th>
-    <td><%= f.text_field(:name) %></td>
+    <td><%= f.text_field(:name, :class => "form-control") %></td>
   </tr>
   <tr>
     <th><%= f.label(:position) %></th>
@@ -27,6 +27,6 @@
   </tr>
   <tr>
     <th><%= f.label(:content) %></th>
-    <td><%= f.text_area(:content, :size => '40x10') %></td>
+    <td><%= f.text_area(:content, :size => '40x10', :class => "form-control") %></td>
   </tr>
 </table>

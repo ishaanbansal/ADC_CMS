@@ -1,9 +1,9 @@
 <%= error_messages_for(@subject) %>
 
-<table summary="Subject form fields">
+<table class="table table-hover" summary="Subject form fields">
   <tr>
     <th><%= f.label(:name, "Name") %></th>
-    <td><%= f.text_field(:name) %></td>
+    <td><%= f.text_field(:name, :class => "form-control") %></td>
   </tr>
   <tr>
     <th><%= f.label(:position) %></th>
@@ -15,6 +15,6 @@
   </tr>
   <tr>
     <th><%= f.label(:created_at) %></th>
-    <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
+    <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year], :class => "form-control") %></td>
   </tr>
 </table>

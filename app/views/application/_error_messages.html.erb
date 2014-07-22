@@ -1,5 +1,6 @@
 <% if object && object.errors.size > 0 %>
-  <div id="errorExplanation">
+  <div id="errorExplanation" class="alert alert-danger alert-dismissible" role="alert">
+  	 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
     <h2><%= pluralize(object.errors.size, "error") %> prohibited this record from being saved</h2>
     <p>There were problems with the following fields:</p>
     <ul>

@@ -1,24 +1,24 @@
 <%= error_messages_for(@admin_user) %>
 
-<table summary="Admin user form fields">
+<table  class="table table-hover" summary="Admin user form fields">
   <tr>
     <th><%= f.label(:first_name) %></th>
-    <td><%= f.text_field(:first_name) %></td>
+    <td><%= f.text_field(:first_name, :class => "form-control") %></td>
   </tr>
   <tr>
     <th><%= f.label(:last_name) %></th>
-    <td><%= f.text_field(:last_name) %></td>
+    <td><%= f.text_field(:last_name, :class => "form-control") %></td>
   </tr>
   <tr>
     <th><%= f.label(:email) %></th>
-    <td><%= f.text_field(:email) %></td>
+    <td><%= f.text_field(:email, :class => "form-control") %></td>
   </tr>
   <tr>
     <th><%= f.label(:username) %></th>
-    <td><%= f.text_field(:username) %></td>
+    <td><%= f.text_field(:username, :class => "form-control") %></td>
   </tr>
   <tr>
     <th><%= f.label(:password) %></th>
-    <td><%= f.password_field(:password) %></td>
+    <td><%= f.password_field(:password, :class => "form-control") %></td>
   </tr>
 </table>

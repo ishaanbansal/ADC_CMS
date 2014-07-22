@@ -14,7 +14,7 @@
  *= require admin
  *= require_tree .
  */
-
+  
   #page_navigation{
     margin: 0 8% 0 6%;
   }

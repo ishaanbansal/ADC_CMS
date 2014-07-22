@@ -1,24 +1,24 @@
 <%= error_messages_for(@user) %>
 
-<table summary="user form fields">
-  <tr>
-    <th><%= f.label(:first_name) %></th>
-    <td><%= f.text_field(:first_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:last_name) %></th>
-    <td><%= f.text_field(:last_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:email) %></th>
-    <td><%= f.text_field(:email) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:username) %></th>
-    <td><%= f.text_field(:username) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:password) %></th>
-    <td><%= f.password_field(:password) %></td>
-  </tr>
-</table>
+<div  class="form-group" summary="user form fields">
+  
+    <%= f.label(:first_name) %>
+    <%= f.text_field(:first_name, :class => "form-control") %>
+  
+  
+    <%= f.label(:last_name) %>
+    <%= f.text_field(:last_name, :class => "form-control") %>
+  
+  
+    <%= f.label(:email) %>
+    <%= f.text_field(:email, :class => "form-control") %>
+  
+  
+    <%= f.label(:username) %>
+    <%= f.text_field(:username, :class => "form-control") %>
+  
+  
+    <%= f.label(:password) %>
+    <%= f.password_field(:password, :class => "form-control") %>
+  
+</div>

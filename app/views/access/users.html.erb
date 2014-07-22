@@ -6,14 +6,14 @@
   <h2>Users</h2>
   <div><%= pluralize(@users.size, 'user') %> found</div>
 
-  <table class="listing" summary="users list">
+  <table class="table table-hover" summary="users list">
     <tr>
       <th>Username</th>
       <th>Name</th>
       <th>Email</th>
     </tr>
     <% @users.each do |user| %>
-    <tr class="<%= cycle('odd', 'even') %>">
+    <tr>
       <td><%= user.username %></td>
       <td><%= user.name %></td>
       <td><%= mail_to(user.email) %></td>

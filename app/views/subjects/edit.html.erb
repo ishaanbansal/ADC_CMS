@@ -2,7 +2,7 @@
 
 <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
 
-<div class="subjects edit">
+<div class="col-md-8">
   <h2>Update Subject</h2>
 
   <%= form_for(:subject, :url => {:action => 'update', :id => @subject.id}) do |f| %>
@@ -10,8 +10,11 @@
     <%= render(:partial => "form", :locals => {:f => f}) %>
 
     <div class="form-buttons">
-      <%= submit_tag("Update Subject") %>
+      <%= submit_tag("Update Subject", :class => "btn btn-primary") %>
     </div>
 
   <% end %>
+</div>
+<div class="col-md-4" id="help">
+  HELP - Subjects
 </div>
