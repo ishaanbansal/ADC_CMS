@@ -11,7 +11,7 @@
   	<h4 id=<%= "section#{section.id}" %>><%= section.name %></h4>
     <% case section.content_type %>
     <% when 'HTML' %>
-      <%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a','p','br'])) %>
+      <%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a','p','br','table','tr','td','th'])) %>
     <% when 'text' %>
       <p><%= section.content %></p>
     <% end %>
