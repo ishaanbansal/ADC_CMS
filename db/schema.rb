@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716182829) do
+ActiveRecord::Schema.define(version: 20140730151834) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name",      limit: 25
@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 20140716182829) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.integer  "phone",           limit: 15
+    t.string   "address",         limit: 150
   end
 
   add_index "users", ["username"], name: "index_users_on_username"

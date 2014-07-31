@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
-  #FORBIDDEN_USERNAMES = ['littlebopeep','humptydumpty','marymary']
+  #FORBIDDEN_USERNAMES = ['']
   validates :first_name, :presence => true,
                          :length => { :maximum => 25 }
   validates :last_name, :presence => true,
@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
                     :length => { :maximum => 100 },
                     :format => EMAIL_REGEX,
                     :confirmation => true
-
+  validates :phone, :presence => true,
+                         :length => { :maximum => 15 },
+                         :numericality => { :only_intger => true }
   # validates_presence_of :first_name
   # validates_length_of :first_name, :maximum => 25
   # validates_presence_of :last_name

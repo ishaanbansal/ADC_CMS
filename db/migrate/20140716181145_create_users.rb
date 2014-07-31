@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string "username", :limit => 25
       t.string "email", :default => "", :null => false, :limit => 100
       t.string "hashed_password", :limit => 40
-	  
+	   
 	  t.timestamps
     end
     add_index("users", "username")

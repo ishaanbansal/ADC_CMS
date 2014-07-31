@@ -7,6 +7,7 @@ class PublicController < ApplicationController
 
   def index
     # intro text
+    @page="home"
   end
 
   def search
@@ -22,7 +23,7 @@ class PublicController < ApplicationController
   end
 
   def show
-    @page = Page.where(:permalink => params[:permalink], :visible => true).first
+    @page = Page.where(:permalink => params[:permalink]).first
     if @page.nil?
       redirect_to(:action => 'index')
     else
